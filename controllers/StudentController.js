@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const Student = require("../models/Student");
 
 module.exports = {

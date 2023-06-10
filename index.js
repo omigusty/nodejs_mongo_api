@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bookRouter = require("./router/book");
 const studentRouter = require("./router/student");
+const userRouter = require("./router/user");
 const cors = require("cors");
 
 const app = express();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 
 app.use(bookRouter);
 app.use(studentRouter);
+app.use(userRouter);
 
 app.listen(3000, () => {
   console.log("Server listen on port 3000");

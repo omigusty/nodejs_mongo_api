@@ -6,6 +6,7 @@ const userRouter = require("./router/user");
 const cors = require("cors");
 
 const app = express();
+const port = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,6 +32,6 @@ app.use(bookRouter);
 app.use(studentRouter);
 app.use(userRouter);
 
-app.listen(3000, () => {
-  console.log("Server listen on port 3000");
+app.listen(port, () => {
+  console.log(`Server listen on port ${port}`);
 });

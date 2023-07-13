@@ -7,6 +7,7 @@ const port = 3000;
 const bookRouter = require("./src/router/book");
 const studentRouter = require("./src/router/student");
 const userRouter = require("./src/router/user");
+const productRouter = require("./src/router/product");
 
 const app = express();
 
@@ -28,7 +29,7 @@ mongoose
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, "images/students");
+    callback(null, "images");
   },
   filename: (req, file, callback) => {
     callback(null, new Date().getTime() + "-" + file.originalname);
@@ -58,6 +59,7 @@ app.get("/", (req, res) => {
 
 app.use(bookRouter);
 app.use(studentRouter);
+app.use(productRouter);
 app.use(userRouter);
 
 app.listen(port, () => {

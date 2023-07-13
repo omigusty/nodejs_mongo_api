@@ -10,7 +10,7 @@ module.exports = {
       const hashedPassword = await bcrypt.hash(password, 10);
       const user = new userModel({ username, password: hashedPassword });
       await user.save();
-      res.status(201).json({ message: "User berhasi terdaftar" });
+      res.status(201).json({ message: "User berhasil terdaftar" });
     } catch (error) {
       res.status(500).json({ message: "Terjadi kesalahan saat registrasi" });
     }
